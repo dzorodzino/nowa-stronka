@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+  <meta charset="utf-8">
+  <title>Szybka ankieta – Igor Miszkiel</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #d7d2cc 0%, #304352 100%);
+      font-family: "Comic Sans MS", "Segoe Print", cursive;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+      margin: 0;
+    }
+
+    form {
+      background-color: lightgrey;
+      width: 900px;
+      padding: 40px 60px;
+      border: 1px solid #aaa;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 50px;
+      row-gap: 20px;
+      position: relative;
+    }
+
+    h1 {
+      grid-column: span 2;
+      text-align: center;
+      border: 2px solid black;
+      display: inline-block;
+      padding: 4px 25px;
+      margin: 0 auto 25px auto;
+      font-size: 24px;
+      background: #ffffff;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .radio-group.poziomo {
+     flex-direction: row;
+     gap: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #222;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="time"],
+    input[type="date"],
+    input[type="color"],
+    select,
+    textarea {
+      border: 1px solid #000;
+      background: transparent;
+      padding: 4px 6px;
+      border-radius: 3px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    input[type="checkbox"], input[type="radio"] {
+      transform: scale(1.2);
+      margin-right: 6px;
+    }
+
+    .checkbox-group, .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .ramka {
+      border: 1px solid black;
+      padding: 6px 10px;
+      display: inline-block;
+      margin-top: 5px;
+    }
+
+    .full-width {
+      grid-column: span 2;
+    }
+
+    .buttons {
+      grid-column: span 2;
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    button, input[type="submit"], input[type="reset"] {
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      margin: 6px;
+    }
+
+    button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
+      background-color: #0d47a1;
+    }
+
+    .socials {
+      grid-column: span 2;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .socials img {
+      width: 80px;
+      height: 80px;
+      margin: 8px;
+      border-radius: 10px;
+      transition: transform 0.2s;
+    }
+
+    .socials img:hover {
+      transform: scale(1.1);
+    }
+
+    .dolne {
+      grid-column: span 2;
+      text-align: right;
+      font-size: 14px;
+      color: #333;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="mailto:igormiszkiel2010@gmail.com" method="post" enctype="text/plain">
+    <h1>Szybka ankieta</h1>
+
+    <!-- Lewa kolumna -->
+    <div class="form-group">
+      <label>1. Imię i nazwisko:</label>
+      <input name="imie_i_nazwisko" required>
+    </div>
+
+    <div class="form-group">
+      <label>2. Adres e-mail:</label>
+      <input type="email" name="email" value="@" placeholder="@">
+    </div>
+
+    <div class="form-group">
+      <label>3. Twój wiek:</label>
+      <div class="radio-group">
+        <label><input type="checkbox" name="wiek" value="<18"> &lt;18</label>
+        <label><input type="checkbox" name="wiek" value="18-25"> 18–25</label>
+        <label><input type="checkbox" name="wiek" value="26-35"> 26–35</label>
+        <label><input type="checkbox" name="wiek" value="36-50"> 36–50</label>
+        <label><input type="checkbox" name="wiek" value=">50"> &gt;50</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>4. Ulubione hobby / zajęcia w wolnym czasie:</label>
+      <div class="checkbox-group">
+        <label><input type="radio" name="hobby" value="Sport"> Sport</label>
+        <label><input type="radio" name="hobby" value="Czytanie"> Czytanie</label>
+        <label><input type="radio" name="hobby" value="Gry"> Gry komputerowe</label>
+        <label><input type="radio" name="hobby" value="Podróże"> Podróże</label>
+        <label><input type="radio" name="hobby" value="Rysowanie"> Rysowanie / sztuka</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+  <label>5. Twoja ulubiona pora dnia:</label>
+  <div class="ramka">
+    <select name="pora_dnia">
+      <option selected>Rano</option>
+      <option>Południe</option>
+      <option>Popołudnie</option>
+      <option>Wieczór</option>
+      <option>Noc</option>
+    </select>
+  </div>
+</div>
+
+
+    <div class="form-group">
+      <label>6. Lubisz oglądać filmy / seriale online?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="ogladasz" value="Tak" checked> Tak</label>
+        <label><input type="radio" name="ogladasz" value="Nie"> Nie</label>
+        <label><input type="radio" name="ogladasz" value="Czasami"> Czasami</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+  <label>7. Jak często korzystasz z internetu w ciągu dnia?</label>
+  <div class="ramka">
+    <select name="czas_internetu">
+      <option> </option>
+      <option><1 godz.</option>
+      <option>1–3 godz.</option> <!-- ✅ domyślnie zaznaczone -->
+      <option>3–5 godz.</option>
+      <option>>5 godz.</option>
+    </select>
+  </div>
+</div>
+
+
+    <div class="form-group">
+      <label>8. Ulubiony gatunek filmowy / serialowy:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="gatunek" value="Komedia"> Komedia</label>
+        <label><input type="checkbox" name="gatunek" value="Horror"> Horror</label>
+        <label><input type="checkbox" name="gatunek" value="Sci-Fi"> Sci-Fi</label>
+        <label><input type="checkbox" name="gatunek" value="Dramat"> Dramat</label>
+        <label><input type="checkbox" name="gatunek" value="Animacja"> Animacja</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>9. Kod pocztowy (max 6 znaków):</label>
+      <input type="text" maxlength="6" name="kod_pocztowy" style="width: 130px;">
+    </div>
+
+    <div class="form-group">
+      <label>10. Twoje ulubione social media (można zaznaczyć kilka):</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="social" value="Facebook"> Facebook</label>
+        <label><input type="checkbox" name="social" value="Instagram"> Instagram</label>
+        <label><input type="checkbox" name="social" value="TikTok"> TikTok</label>
+        <label><input type="checkbox" name="social" value="Twitter/X"> Twitter / X</label>
+        <label><input type="checkbox" name="social" value="YouTube"> YouTube</label>
+      </div>
+    </div>
+
+   <div class="form-group">
+      <label>11. Co zmienił(a)byś w swoim mieście/otoczeniu?</label>
+      <div class="radio-group poziomo">
+        <label><input type="radio" name="zmiany" value="Infrastruktura"> Infrastrukture</label>
+        <label><input type="radio" name="zmiany" value="Porządek"> Porządek na ulicach</label>
+        <label><input type="radio" name="zmiany" value="Zieleń"> Więcej zieleni</label>
+        <label><input type="radio" name="zmiany" value="Kultura"> Więcej wydarzeń kulturalnych</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>12. Pole na dodatkowe uwagi / sugestie:</label>
+      <textarea rows="4" name="uwagi"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>14. Dodatkowe dane:</label>
+      <div class="small-inputs">
+        <input type="time" name="czas">
+        <input type="date" name="data">
+        <input type="color" name="kolor">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>13. Wilgotność w Twoim mieście:</label>
+      <input type="range" min="0" max="100">
+    </div>
+
+    <div class="form-group">
+      <label>Hasło które umożliwia wysłanie ankiety:</label>
+      <input type="password" name="haslo" value="********">
+    </div>
+
+    <div class="buttons">
+      <button type="button" onclick="alert('Słyszałeś żart o napięciu? Na pięciu napadło dziesięciu ')">Żart na dzisiaj</button>
+      <input type="reset" value="Resetuj">
+      <input type="submit" value="Wyślij formularz">
+    </div>
+
+    <div class="socials">
+      <a href="https://www.tiktok.com/pl-PL/"><img src="grafiki/tiktok.PNG" alt="TikTok"></a>
+      <a href="https://www.instagram.com"><img src="grafiki/instagram.PNG" alt="Instagram"></a>
+      <a href="zadanie_igormiszkiel1.html"><img src="grafiki/domek.PNG" alt="Strona główna"></a>
+      <p>Udostępnij ankietę lub kliknij na domek, aby wrócić na stronę główną.</p>
+    </div>
+  </form>
+</body>
+</html>
